@@ -15,6 +15,7 @@ $ cd \$HOME/bin
 $ wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd
 $ chmod +x echo-sd
 $ export PATH="\$HOME/bin:\$PATH"
+$ echo 'export PATH="\$HOME/bin:\$PATH"' >> ~/.bashrc
 EOF
 echo -e '\e[m\n'
 

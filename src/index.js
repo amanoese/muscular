@@ -44,7 +44,7 @@ program
   let regexp = new RegExp(`(.{${height - 2}})`,'g')
   fs.writeFileSync(inputTextPath,inputText.replace(regexp,'$1\n'))
 
-  let echo_sd_text = (await exec(`${__dirname}/../lib/echo-sd -v $(cat ${inputTextPath})`)).stdout
+  let echo_sd_text = (await exec(`echo-sd -v $(cat ${inputTextPath})`)).stdout
   let echo_sd_list = echo_sd_text.split('\n')
 
   let echo_sd_list_centering = [
