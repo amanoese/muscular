@@ -11,6 +11,7 @@ $ npm i -g @amanoese/muscular
 ## Usage
 
 muscular.shoutは、ボディビルの掛け声とAAを表示してくれます。
+また、AAと掛け声はランダムに変わります。
 
 ```bash
 $ muscular.shout
