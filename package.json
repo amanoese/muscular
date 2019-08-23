@@ -13,6 +13,7 @@
   "dependencies": {
     "commander": "^3.0.0",
     "filehound": "^1.17.3",
-    "get-stdin": "^7.0.0"
+    "get-stdin": "^7.0.0",
+    "tempy": "^0.3.0"
   }
 }
