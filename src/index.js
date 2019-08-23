@@ -4,6 +4,7 @@ const getStdin = require('get-stdin')
 const FileHound = require('filehound');
 const fs = require('fs');
 const tempy = require('tempy');
+const _ = require('lodash')
 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -18,7 +19,8 @@ let muscular_shout = () => {
     .readFileSync(`${__dirname}/../data/shout.txt`)
     .toString()
     .split('\n')
-  return words[Math.floor(Math.random() * words.length)]
+
+  return _.shuffle(words)[0]
 }
 
 program
@@ -30,8 +32,7 @@ program
     muscular_shout();
 
   let files = await filesp
-  let index = Math.floor(Math.random() * files.length)
-  let aa_path = files[index]
+  let aa_path = _.shuffle(files)[0]
 
   let raw_aa = fs.readFileSync(aa_path).toString()
   let height = raw_aa.split('\n').length
