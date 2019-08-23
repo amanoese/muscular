@@ -1,0 +1,5 @@
+.gitignore
+.travis.yml
+LICENSE
+node_modules
+__tests__
