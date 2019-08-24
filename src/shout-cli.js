@@ -16,6 +16,9 @@ let muscular_shout = () => {
   return _.shuffle(words)[0]
 }
 
+program._name = 'muscular shout'
+program._usage = '[text]\n\n ランダムにボディビルなポーズとテキストを表示します。'
+
 program
 .option('-p, --pose <name>','specify pose')
 .option('--pose-list','list of Pose Name')
