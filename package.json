@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "./post_install.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Seito Taka",
   "license": "Apache-2.0",
