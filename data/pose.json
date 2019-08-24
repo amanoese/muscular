@@ -1,0 +1,31 @@
+[
+  {
+    "en"   :"front-relax",
+    "text" : "フロントリラックス",
+    "file" : "front-relax.txt"
+  },{
+    "en"   : "abdominals-and-thighs",
+    "text" : "アブドミナルアンドサイ",
+    "file" : "abdominals-and-thighs.txt"
+  },{
+    "en"   : "double-biseps-front",
+    "text" : "ダブルバイセップ",
+    "file" : "double-biseps-front.txt"
+  },{
+    "en"   : "rat-spread-back",
+    "text" : "ラットスプレッドバック",
+    "file" : "rat-spread-back.txt"
+  },{
+    "en"   : "rat-spread-front",
+    "text" : "ラットスプレッドフロント",
+    "file" : "rat-spread-front.txt"
+  },{
+    "en"   : "side-chest",
+    "text" : "サイドチェスト",
+    "file" : "side-chest.txt"
+  },{
+    "en"   : "trysep",
+    "text" : "トライセップ",
+    "file" : "trysep.txt"
+  }
+]
