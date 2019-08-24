@@ -3,6 +3,9 @@ const appRoot = require('app-root-path');
 const fs      = require('fs');
 const program = require('commander');
 
+program._usage = 
+ '[command]\n\nMuscularは筋肉の力は最高のパワーであることを表現するためのコマンドです。' +
+ 'いくつかのボディビルポーズと掛け声を収録しています。'
 program
 .version(require('../package.json').version)
 .command('pose','bodybuilder pose',{executableFile: 'pose-cli'})
