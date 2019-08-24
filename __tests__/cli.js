@@ -1,7 +1,8 @@
 const appRoot = require('app-root-path');
 
-const util  = require('util');
-const exec  = util.promisify(require('child_process').exec);
+const fs   = require('fs');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 describe('muscular',()=>{
   test('pose',async ()=>{
@@ -35,31 +36,7 @@ describe('muscular',()=>{
   })
   test('shout',async ()=>{
     let { stdout } =await exec(`${appRoot}/src/index-cli.js shout -p フロントリラックス ナイスバルク`)
-    expect(stdout.replace('　',' ')).toBe(
-`        .-~-.          
-        /   \\          
-        |   /          
-     ,_-/ ,.*\`--.,     
-   .r ;       \`\`  \\    
-  .\`,\`   ,:  ,.\`A\`,\\   
- /,\`/\\\`''  ''  ? \\\` \\  
-/  /  \\ ; , ; /   )  } ＿人人＿
-| /    \\:':': |   | 7  ＞ ナ ＜
-| |    ) ':'  |  ,\` /  ＞ イ ＜
-( \\    \`-,_,-~}  | l   ＞ ス ＜
- \`~   / \`,  /' \\ '"'   ＞ バ ＜
-     ,7   \\/   |.      ＞ ル ＜
-     {  ; |, ,  )      ＞ ク ＜
-     |,\`: |\`,\`: |      ￣Y^Y^￣
-     \\\` , /\\\`.; /      
-      |\`;/  \\ , |      
-      \\\`\`\\   |\` (      
-      \\ . )  {  /      
-       \\ \`/  (  }      
-        \\ |  | /       
-        ) \\  | |       
-     c~^_~d  V _\`,     
-                       
-`)
+    expect(stdout)
+      .toBe(fs.readFileSync(`${appRoot}/__tests__/shout-result.txt`).toString())
   })
 })
