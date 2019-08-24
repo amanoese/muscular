@@ -1,5 +1,8 @@
 # Muscular !!!
 
+[![Build Status](https://travis-ci.org/amanoese/enigma.svg?branch=master)](https://travis-ci.org/amanoese/muscular)
+[![npm version](http://img.shields.io/npm/v/@amanoese/muscular.svg)](https://npmjs.org/package/@amanoese/muscular)
+
 Muscularは筋肉の力は最高のパワーであることを表現するためのコマンドです。
 
 ## Install
