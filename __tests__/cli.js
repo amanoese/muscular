@@ -6,7 +6,7 @@ const exec  = util.promisify(require('child_process').exec);
 describe('muscular',()=>{
   test('pose',async ()=>{
     let { stdout } =await exec(`${appRoot}/src/index-cli.js pose -p フロントリラックス`)
-    expect(stdout).toBe(
+    expect(stdout.replace('　',' ')).toBe(
 `        .-~-.         
         /   \\         
         |   /         
@@ -35,7 +35,7 @@ describe('muscular',()=>{
   })
   test('shout',async ()=>{
     let { stdout } =await exec(`${appRoot}/src/index-cli.js shout -p フロントリラックス ナイスバルク`)
-    expect(stdout).toBe(
+    expect(stdout.replace('　',' ')).toBe(
 `        .-~-.          
         /   \\          
         |   /          
