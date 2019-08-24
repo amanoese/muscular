@@ -15,11 +15,7 @@ const filesp = FileHound.create()
   .find();
 
 let muscular_shout = () => {
-  let words = fs
-    .readFileSync(`${__dirname}/../data/shout.txt`)
-    .toString()
-    .split('\n')
-
+  let words = require(`${__dirname}/../data/shout.json`)
   return _.shuffle(words)[0]
 }
 
