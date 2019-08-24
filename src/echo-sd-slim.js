@@ -19,22 +19,25 @@ module.exports = {
       .map(v=>v.split(''))
     )
 
-    let regexp = XRegExp('[ -~\\p{InHalfwidth_And_Fullwidth_Forms}]','g');
     let result = tateList.map(s=>s.join('')).join('\n')
-    return result.replace(regexp,'$& ')
+    return result.replace(/./g,(s)=>stringWidth(s)<=1 ? (s + ' ') : s)
   },
   print(text){
     // 2の倍数にする
-    let maxWidth = (_.max(text.split('\n').map(stringWidth)) + 1) & 0xfffffe
+    let maxWidth = (_.max(text.split('\n').map(v=>stringWidth(v))) + 1) & 0xfffffe
 
     let textList = text.split('\n')
       .map(v=>cutString(v + ' '.repeat(maxWidth),maxWidth))
+      .map(v=>v.replace(/.*/,' $& '))
 
     let result =
-      `＿${'人'.repeat(maxWidth/2)}＿\n` +
-      textList.map(s=>`＞${s}＜\n`)      +
-      `￣${'Y^'.repeat(maxWidth/2)}￣\n` ;
+      `＿人${'人'.repeat(maxWidth/2)}＿\n` +
+      textList.map(s=>`＞${s}＜`).join('\n') + '\n' +
+      `￣Y^${'Y^'.repeat(maxWidth/2)}￣\n` ;
 
     return result
+  },
+  tatePrint(text){
+    return this.print(this.tate(text))
   }
 }

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const program   = require('commander');
 const getStdin  = require('get-stdin')
-const posejs    = require('./pose.js');
+const posejs    = require('./pose');
+const echoSdSlim    = require('./echo-sd-slim');
 
 const _     = require('lodash')
 const fs    = require('fs');
@@ -37,11 +38,10 @@ program
   let aa_list = aa_text.split('\n')
   let aa_height  = aa_list.length
 
-  let inputTextPath = tempy.file()
-  let regexp = new RegExp(`(.{${aa_height - 2}})`,'g')
-  fs.writeFileSync(inputTextPath,inputText.replace(regexp,'$1\n'))
-  let echo_sd_text = (await exec(`echo-sd -v $(cat ${inputTextPath})`)).stdout
+  let textCut = inputText.replace(new RegExp(`.{${(aa_height -1 ) - 2}}`,'g'),'$&\n')
+  let echo_sd_text = echoSdSlim.tatePrint(textCut)
 
+  //console.log({inputText,textCut,echo_sd_text})
   let echo_sd_list = echo_sd_text.split('\n')
 
   let echo_sd_list_centering = [
