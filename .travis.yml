@@ -6,8 +6,10 @@ node_js:
   - '12'
 
 before_install:
-  - "wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /usr/local/bin/echo-sd"
-  - "chmod +x /usr/local/bin/echo-sd"
+  - mkdir /tmp/bin
+  - "wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /tmp/bin/echo-sd"
+  - "chmod +x /tmp/bin/echo-sd"
+  - export PATH=$PATH:/tmp/bin/
 
 cache: npm
 
