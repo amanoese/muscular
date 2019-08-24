@@ -5,10 +5,11 @@ node_js:
   - '10'
   - '12'
 
-cache: npm
+before_install:
+  - "wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /usr/local/bin/echo-sd"
+  - "chmod +x /usr/local/bin/echo-sd"
 
-before_script:
-  - wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /usr/local/bin/echo-sd
+cache: npm
 
 script:
   - npm test
