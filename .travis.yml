@@ -7,5 +7,8 @@ node_js:
 
 cache: npm
 
+before_script:
+  - wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /usr/local/bin/echo-sd
+
 script:
   - npm test
