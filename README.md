@@ -9,6 +9,18 @@ $ npm i -g @amanoese/muscular
 ```
 
 ## Usage
+```bash
+Usage: muscular [options] [command]
+
+Options:
+  -V, --version  output the version number
+  -h, --help     output usage information
+
+Commands:
+  pose           bodybuilder pose
+  shout          bodybuilder shout
+  help [cmd]     display help for [cmd]
+```
 
 muscular shoutは、ボディビルの掛け声とAAを表示してくれます。
 また、AAと掛け声はランダムに変わります。掛け声を指定することもできます。
@@ -40,7 +52,6 @@ $ muscular shout
         ) \  | |        
      c~^_~d  V _`,      
                         
-
 ```
 
 ## ASCII ART

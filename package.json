@@ -1,6 +1,6 @@
 {
   "name": "@amanoese/muscular",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Muscularは筋肉の力は最高のパワーであることを表現するためのコマンドです。",
   "bin": {
     "muscular": "src/index-cli.js"
@@ -23,7 +23,9 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amanoese/muscular.git"
