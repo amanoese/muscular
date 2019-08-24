@@ -20,7 +20,10 @@ module.exports = {
   list(){
     return  [ ...pose.map(v=>v.en), ...pose.map(v=>v.text) ]
   },
-  getPoseName(){
+  getPoseName(name){
+    return this.list().includes(name) ? name : 'front-relax'
+  },
+  randomPoseName(){
     return _.shuffle(this.list())[0]
   },
   nomarizeAA( aa_text ){
@@ -34,7 +37,7 @@ module.exports = {
     return aa_list.join('\n')
   },
   getAA(name){
-    let key = this.poseJaNameToEn(name) || name
+    let key = this.getPoseName(this.poseJaNameToEn(name) || name)
     let aa_text = fs.readFileSync(`${appRoot}/data_aa/${this.poseHash[key]}`)
       .toString()
     return this.nomarizeAA(aa_text)
@@ -44,7 +47,7 @@ module.exports = {
     if (list != null) {
       return this.list().join('\n')
     }
-    pose = pose || this.getPoseName()
+    pose = pose || this.randomPoseName()
     return this.getAA(pose)
   }
 }
