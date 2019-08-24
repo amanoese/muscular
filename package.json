@@ -12,6 +12,7 @@
   "author": "Seito Taka",
   "license": "Apache-2.0",
   "dependencies": {
+    "app-root-path": "^2.2.1",
     "commander": "^3.0.0",
     "filehound": "^1.17.3",
     "get-stdin": "^7.0.0",
