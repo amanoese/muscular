@@ -17,7 +17,8 @@
     "filehound": "^1.17.3",
     "get-stdin": "^7.0.0",
     "lodash": "^4.17.15",
-    "tempy": "^0.3.0"
+    "tempy": "^0.3.0",
+    "xregexp": "^4.2.4"
   },
   "main": "index.js",
   "directories": {
