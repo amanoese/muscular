@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const XRegExp = require('xregexp');
 const stringWidth = require('string-width');
+const yokoTate = require('../data/yoko-tate');
 
 let cutString = (str,width) => {
   return stringWidth(str) > width ?
@@ -10,7 +11,7 @@ let cutString = (str,width) => {
 module.exports = {
 
   tate(text){
-    let list = text.split('\n')
+    let list = text.replace(/./g,s=>yokoTate[s]||s).split('\n')
     let maxWidth = _.max(list.map(s=>s.length))
     let normalizeList = list.map(s=>`${s}${'　'.repeat(maxWidth)}`.slice(0,maxWidth))
 

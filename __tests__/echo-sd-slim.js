@@ -18,7 +18,7 @@ describe('echo-sd-slim',()=>{
             'れは\n' +
             'で　\n' +
             'す　\n' +
-            '。　')
+            '︒　')
   })
   test('tate 半角文字入り',async ()=>{
     expect(echoSdSlim.tate('unko\nｳﾝｺです。'))
@@ -27,7 +27,8 @@ describe('echo-sd-slim',()=>{
             'ｺ k \n' +
             'でo \n' +
             'す　\n' +
-            '。　')
+            '︒　')
+
   })
   test('echo-sd',async ()=>{
     expect(echoSdSlim.print('うんこ'))

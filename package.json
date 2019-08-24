@@ -6,7 +6,6 @@
     "muscular": "src/index-cli.js"
   },
   "scripts": {
-    "postinstall": "./post_install.sh",
     "test": "jest"
   },
   "author": "Seito Taka",
