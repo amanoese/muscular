@@ -12,7 +12,7 @@ program
     console.log(posejs.list().join('\n'))
     return
   }
-  pose = pose || posejs.getPoseNmae()
+  pose = pose || posejs.getPoseName()
   console.log(posejs.getAA(pose))
 })
 .parse(process.argv)
