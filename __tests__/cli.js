@@ -12,7 +12,7 @@ describe('muscular',()=>{
   })
   test('shout',async ()=>{
     let { stdout } =await exec(`${appRoot}/src/index-cli.js shout -p フロントリラックス ナイスバルク`)
-    expect(stdout)
+    expect(stdout.replace(/　/g,' '))
       .toBe(fs.readFileSync(`${appRoot}/__tests__/shout-result.txt`).toString())
   })
 })

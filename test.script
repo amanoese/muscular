@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir /tmp/bin
+wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /tmp/bin/echo-sd
+chmod +x /tmp/bin/echo-sd
+export PATH=$PATH:/tmp/bin/
+
+npm run test
