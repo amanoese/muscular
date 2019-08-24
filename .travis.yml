@@ -5,6 +5,9 @@ node_js:
   - '10'
   - '12'
 
+env:
+  LNAG=ja_JP.UTF-8
+
 before_install:
   - mkdir /tmp/bin
   - "wget -nv https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd -O /tmp/bin/echo-sd"
