@@ -17,13 +17,20 @@ let muscular_shout = () => {
 }
 
 program
+.option('-p, --pose <name>','specify pose')
+.option('--pose-list','list of Pose Name')
 .arguments('[text]')
-.action(async text => {
+.action(async (text,options)=> {
+  if(options.poseList != null){
+    console.log(posejs.action({ list : true }))
+    return
+  }
+
   let inputText = text ||
     (await getStdin()) ||
     muscular_shout();
 
-  let aa_text = posejs.getAA(posejs.getPoseName())
+  let aa_text = posejs.action(options)
   let aa_list = aa_text.split('\n')
   let aa_height  = aa_list.length
 

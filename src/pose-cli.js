@@ -7,12 +7,6 @@ program
 .option('-p, --pose <name>','specify pose')
 .option('-l, --list','list of Pose Name')
 .action(options=>{
-  let { pose , list } = options
-  if (list != null) {
-    console.log(posejs.list().join('\n'))
-    return
-  }
-  pose = pose || posejs.getPoseName()
-  console.log(posejs.getAA(pose))
+  console.log(posejs.action(options))
 })
 .parse(process.argv)

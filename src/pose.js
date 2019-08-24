@@ -38,5 +38,13 @@ module.exports = {
     let aa_text = fs.readFileSync(`${appRoot}/data_aa/${this.poseHash[key]}`)
       .toString()
     return this.nomarizeAA(aa_text)
+  },
+  action(options){
+    let { pose , list } = options
+    if (list != null) {
+      return this.list().join('\n')
+    }
+    pose = pose || this.getPoseName()
+    return this.getAA(pose)
   }
 }
