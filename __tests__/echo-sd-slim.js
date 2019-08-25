@@ -1,4 +1,6 @@
 const echoSdSlim = require('../src/echo-sd-slim.js')
+const stringWidth = require('string-width');
+const XRegExp = require('xregexp');
 
 describe('echo-sd-slim',()=>{
   test('tate 単行',async ()=>{
@@ -28,6 +30,22 @@ describe('echo-sd-slim',()=>{
             'でo \n' +
             'す　\n' +
             '︒　')
+
+  })
+  test('XRegExp 絵文字の確認',async ()=>{
+    XRegExp.install('astral');
+
+    expect('abcアイウ🍣🍺🍚'.replace(XRegExp('.','ug'),'$&-'))
+      .toBe('a-b-c-ア-イ-ウ-🍣-🍺-🍚-')
+  })
+  test('stringWidth 絵文字の確認',async ()=>{
+    expect(stringWidth('🍣🍺🍚')).toBe(6)
+  })
+  test('tate 絵文字',async ()=>{
+    expect(echoSdSlim.tate('🍣🍺🍚'))
+      .toBe('🍣\n' +
+            '🍺\n' +
+            '🍚')
 
   })
   test('echo-sd',async ()=>{
