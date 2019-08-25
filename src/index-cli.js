@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const appRoot = require('app-root-path');
+const appRoot = `${__dirname}/..`
 const fs      = require('fs');
 const program = require('commander');
 

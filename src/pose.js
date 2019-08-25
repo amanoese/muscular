@@ -1,4 +1,4 @@
-const appRoot = require('app-root-path');
+const appRoot = `${__dirname}/..`
 const _       = require('lodash')
 const fs      = require('fs')
 

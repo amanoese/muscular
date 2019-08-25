@@ -10,7 +10,7 @@ const tempy = require('tempy');
 const util  = require('util');
 const exec  = util.promisify(require('child_process').exec);
 
-const appRoot = require('app-root-path');
+const appRoot = `${__dirname}/..`
 
 let muscular_shout = () => {
   let words = require(`${appRoot}/data/shout.json`)

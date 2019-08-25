@@ -1,7 +1,9 @@
+const appRoot = `${__dirname}/..`
+
 const _ = require('lodash')
 const XRegExp = require('xregexp');
 const stringWidth = require('string-width');
-const yokoTate = require('../data/yoko-tate');
+const yokoTate = require(`${appRoot}/data/yoko-tate`);
 
 let cutString = (str,width) => {
   return stringWidth(str) > width ?

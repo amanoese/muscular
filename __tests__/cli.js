@@ -1,4 +1,4 @@
-const appRoot = require('app-root-path');
+const appRoot = `${__dirname}/..`
 
 const fs   = require('fs');
 const util = require('util');
