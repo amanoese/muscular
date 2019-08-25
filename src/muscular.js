@@ -3,13 +3,13 @@ const appRoot = `${__dirname}/..`
 const fs      = require('fs');
 const program = require('commander');
 
-program._usage = 
- '[command]\n\nMuscularは筋肉の力は最高のパワーであることを表現するためのコマンドです。' +
+program._usage = '[command]\n\n' +
+ '筋肉の力は最高のパワーであることを表現するためのコマンドです。\n' +
  'いくつかのボディビルポーズと掛け声を収録しています。'
 program
 .version(require('../package.json').version)
-.command('pose','bodybuilder pose',{executableFile: 'pose-cli'})
-.command('shout','bodybuilder shout',{executableFile: 'shout-cli'})
+.command('pose','bodybuilder pose')
+.command('shout','bodybuilder shout')
 .on('--help', function() {
   console.log(`
 Examples:
