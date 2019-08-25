@@ -16,3 +16,17 @@ describe('muscular',()=>{
       .toBe(fs.readFileSync(`${appRoot}/__tests__/shout-result.txt`).toString())
   })
 })
+
+describe('muscular helpコマンドの確認',()=>{
+
+  test('help pose',async ()=>{
+    let { stdout } =await exec(`${appRoot}/src/muscular.js help pose`)
+    expect(stdout).toMatch(/^Usage: muscular pose/)
+  })
+
+  test('help shout',async ()=>{
+    let { stdout } =await exec(`${appRoot}/src/muscular.js help shout`)
+    expect(stdout).toMatch(/^Usage: muscular shout \[text\]/)
+  })
+
+})
