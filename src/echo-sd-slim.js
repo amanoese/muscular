@@ -4,8 +4,7 @@ const _ = require('lodash')
 const stringWidth = require('string-width');
 const yokoTate = require(`${appRoot}/data/yoko-tate`);
 
-const XRegExp = require('xregexp');
-XRegExp.install('astral');
+const split = require('graphemesplit')
 
 let cutString = (str,width) => {
   return stringWidth(str) > width ?
@@ -15,19 +14,19 @@ let cutString = (str,width) => {
 module.exports = {
 
   tate(text){
-    let allMatchRegExp = XRegExp('.','ug')
 
-    let list = text.replace(allMatchRegExp,s=>yokoTate[s]||s).split('\n')
+    let list = split(text).map(s=>yokoTate[s]||s).join('').split('\n')
+
     let maxWidth = _.max(list.map(s=>s.length))
     let normalizeList = list.map(s=>`${s}${'　'.repeat(maxWidth)}`.slice(0,maxWidth))
 
     let tateList = _.zip(...[...normalizeList]
       .reverse()
-      .map(v=>v.match(allMatchRegExp))
+      .map(v=>split(v))
     )
     //console.log({list,normalizeList,tateList})
     let result = tateList.map(s=>s.join('')).join('\n')
-    return result.replace(allMatchRegExp,(s)=>stringWidth(s)<=1 ? (s + ' ') : s)
+    return split(result).map(s=>stringWidth(s) <=1 && s != '\n' ? (s + ' ') : s).join('')
   },
   print(text){
     // 2の倍数にする
