@@ -1,6 +1,6 @@
 {
   "name": "@amanoese/muscular",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Muscularは筋肉の力は最高のパワーであることを表現するためのコマンドです。",
   "bin": {
     "muscular": "src/muscular.js"
