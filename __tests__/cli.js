@@ -16,7 +16,14 @@ describe('muscular',()=>{
       .toBe(fs.readFileSync(`${appRoot}/__tests__/shout-result.txt`).toString())
   })
 })
-
+describe('muscular データの確認',()=>{
+  test('pose すべてのポーズが表示できるかの確認',async ()=>{
+    await expect(exec(`muscular pose -l | xargs -L1 muscular pose -p`)).resolves.toBeTruthy()
+  })
+  test('shout すべてのポーズが表示できるかの確認',async ()=>{
+    await expect(exec(`muscular shout --pose-list | xargs -L1 muscular shout -p`)).resolves.toBeTruthy()
+  })
+})
 describe('muscular helpコマンドの確認',()=>{
 
   test('help pose',async ()=>{
