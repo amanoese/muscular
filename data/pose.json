@@ -8,24 +8,28 @@
     "text" : "アブドミナルアンドサイ",
     "file" : "abdominals-and-thighs.txt"
   },{
-    "en"   : "double-biseps-front",
-    "text" : "ダブルバイセップ",
-    "file" : "double-biseps-front.txt"
+    "en"   : "front-double-biceps",
+    "text" : "フロントダブルバイセップ",
+    "file" : "front-double-biceps.txt"
   },{
-    "en"   : "rat-spread-back",
+    "en"   : "back-lat-spread",
     "text" : "ラットスプレッドバック",
-    "file" : "rat-spread-back.txt"
+    "file" : "back-lat-spread.txt"
   },{
-    "en"   : "rat-spread-front",
-    "text" : "ラットスプレッドフロント",
-    "file" : "rat-spread-front.txt"
+    "en"   : "front-lat-spread",
+    "text" : "フロントラットスプレッド",
+    "file" : "front-lat-spread.txt"
   },{
     "en"   : "side-chest",
     "text" : "サイドチェスト",
     "file" : "side-chest.txt"
   },{
-    "en"   : "trysep",
-    "text" : "トライセップ",
-    "file" : "trysep.txt"
+    "en"   : "side-triceps",
+    "text" : "サイドトライセップ",
+    "file" : "side-triceps.txt"
+  },{
+    "en"   : "most-muscular",
+    "text" : "モストマスキュラー",
+    "file" : "most-muscular.txt"
   }
 ]
