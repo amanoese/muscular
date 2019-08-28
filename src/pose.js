@@ -4,27 +4,31 @@ const fs      = require('fs')
 
 const FileHound = require('filehound');
 const pose      = require(`${appRoot}/data/pose.json`);
+const poseExt   = require(`${appRoot}/data/pose-ext.json`);
 
 module.exports = {
   poseHash : {
-    ..._.zipObject(
-      pose.map(v=>v.en),
-      pose.map(v=>v.file)
-    )
+    ..._.zipObject(pose.map(v=>v.en),  pose.map(v=>v.file)),
+    ..._.zipObject(pose.map(v=>v.text),pose.map(v=>v.file))
   },
-  poseJaNameToEn(ja){
-    return pose
-      .filter(v=>v.text === ja)
-      .map(v=>v.en)[0]
+  poseExtHash : {
+    ..._.zipObject(poseExt.map(v=>v.en),  poseExt.map(v=>v.file)),
+    ..._.zipObject(poseExt.map(v=>v.text),poseExt.map(v=>v.file))
   },
-  list(){
-    return  [ ...pose.map(v=>v.en), ...pose.map(v=>v.text) ]
+  allPoses() {
+    return [ ...this.nomalPoses(), ...this.extPoses() ]
+  },
+  nomalPoses(){
+    return  _.keys(this.poseHash)
+  },
+  extPoses(){
+    return  _.keys(this.poseExtHash)
   },
   getPoseName(name){
-    return this.list().includes(name) ? name : 'front-relax'
+    return this.allPoses().includes(name) ? name : 'front-relax'
   },
   randomPoseName(){
-    return _.shuffle(this.list())[0]
+    return _.shuffle(this.nomalPoses())[0]
   },
   nomarizeAA( aa_text ){
     let aa_text_list = aa_text.split('\n')
@@ -37,16 +41,19 @@ module.exports = {
     return aa_list.join('\n')
   },
   getAA(name){
-    let key = this.getPoseName(this.poseJaNameToEn(name) || name)
-    let aa_text = fs.readFileSync(`${appRoot}/data_aa/${this.poseHash[key]}`)
+    let key = this.getPoseName(name)
+    let aa_text = fs.readFileSync(`${appRoot}/data_aa/${this.poseHash[key] || this.poseExtHash[key]}`)
       .toString()
     return this.nomarizeAA(aa_text)
   },
   action(options){
     let { pose , list } = options
+    // poseの一覧表示
     if (list != null) {
-      return this.list().join('\n')
+      return this.nomalPoses().join('\n')
     }
+
+    // poseの表示
     pose = pose || this.randomPoseName()
     return this.getAA(pose)
   }
