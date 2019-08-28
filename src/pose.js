@@ -18,17 +18,11 @@ module.exports = {
   allPoses() {
     return [ ...[...pose,...poseExt].map(v=>v.en), ...[...pose,...poseExt].map(v=>v.text) ]
   },
-  nomalPoses(){
-    return  _.keys(this.poseHash)
-  },
-  extPoses(){
-    return  _.keys(this.poseExtHash)
-  },
   getPoseName(name){
     return this.allPoses().includes(name) ? name : 'front-relax'
   },
   randomPoseName(){
-    return _.shuffle(this.nomalPoses())[0]
+    return _.shuffle(this.allPoses())[0]
   },
   nomarizeAA( aa_text ){
     let aa_text_list = aa_text.split('\n')
@@ -47,12 +41,9 @@ module.exports = {
     return this.nomarizeAA(aa_text)
   },
   action(options){
-    let { pose , list , listAll } = options
+    let { pose , list } = options
     // poseの一覧表示
     if (list != null) {
-      return this.nomalPoses().join('\n')
-    }
-    if (listAll != null) {
       return this.allPoses().join('\n')
     }
 

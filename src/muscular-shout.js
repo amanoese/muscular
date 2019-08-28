@@ -21,7 +21,7 @@ program
 .arguments('[text]')
 .action(async (text,options)=> {
   if(options.poseList != null){
-    console.log(posejs.action({ listAll : true }))
+    console.log(posejs.action({ list : true }))
     return
   }
 

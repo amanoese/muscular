@@ -9,7 +9,6 @@ program._usage = '\n\n ランダムにボディビルなポーズを表示しま
 program
 .option('-p, --pose <name>','specify pose')
 .option('-l, --list','list of Pose Name')
-.option('--list-all','list of Pose Name With Ext')
 .action(options=>{
   console.log(posejs.action(options))
 })

@@ -5,7 +5,7 @@ const fs   = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 describe('muscular',()=>{
   test('pose',async ()=>{
