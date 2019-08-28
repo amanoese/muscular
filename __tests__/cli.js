@@ -19,10 +19,10 @@ describe('muscular',()=>{
 })
 describe('muscular データの確認',()=>{
   test('pose すべてのポーズが表示できるかの確認',async ()=>{
-    await expect(exec(`${muscular_cmd} pose -l | xargs -L1 ${muscular_cmd} pose -p`)).resolves.toBeTruthy()
+    await expect(exec(`${muscular_cmd} pose -l | xargs -L1 -P4 ${muscular_cmd} pose -p`)).resolves.toBeTruthy()
   })
   test('shout すべてのポーズが表示できるかの確認',async ()=>{
-    await expect(exec(`${muscular_cmd} shout --pose-list | xargs -L1 ${muscular_cmd} shout -p`)).resolves.toBeTruthy()
+    await expect(exec(`${muscular_cmd} shout --pose-list | xargs -L1 -P4 ${muscular_cmd} shout -p`)).resolves.toBeTruthy()
   })
 })
 describe('muscular helpコマンドの確認',()=>{
