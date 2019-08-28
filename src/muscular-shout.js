@@ -17,11 +17,11 @@ program._usage = '[text]\n\n ランダムにボディビルなポーズとテキ
 
 program
 .option('-p, --pose <name>','specify pose')
-.option('--pose-list','list of Pose Name')
+.option('--pose-list','list of Pose Name With Ext')
 .arguments('[text]')
 .action(async (text,options)=> {
   if(options.poseList != null){
-    console.log(posejs.action({ list : true }))
+    console.log(posejs.action({ listAll : true }))
     return
   }
 

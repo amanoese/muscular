@@ -47,10 +47,13 @@ module.exports = {
     return this.nomarizeAA(aa_text)
   },
   action(options){
-    let { pose , list } = options
+    let { pose , list , listAll } = options
     // poseの一覧表示
     if (list != null) {
       return this.nomalPoses().join('\n')
+    }
+    if (listAll != null) {
+      return this.allPoses().join('\n')
     }
 
     // poseの表示
