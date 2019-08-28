@@ -12,13 +12,17 @@
     "text" : "フロントダブルバイセップ",
     "file" : "front-double-biceps.txt"
   },{
-    "en"   : "back-lat-spread",
-    "text" : "バックラットスプレッド",
-    "file" : "back-lat-spread.txt"
+    "en"   : "back-double-biceps",
+    "text" : "バックダブルバイセップ",
+    "file" : "back-double-biceps.txt"
   },{
     "en"   : "front-lat-spread",
     "text" : "フロントラットスプレッド",
     "file" : "front-lat-spread.txt"
+  },{
+    "en"   : "back-lat-spread",
+    "text" : "バックラットスプレッド",
+    "file" : "back-lat-spread.txt"
   },{
     "en"   : "side-chest",
     "text" : "サイドチェスト",
