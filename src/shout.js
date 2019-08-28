@@ -4,7 +4,7 @@ const posejs     = require('./pose');
 const echoSdSlim = require('./echo-sd-slim');
 
 module.exports = {
-  action: (inputText,options) => {
+  action: (inputText,options = {}) => {
     let aa_text = posejs.action(options)
     let aa_list = aa_text.split('\n')
     let aa_height  = aa_list.length
