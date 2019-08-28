@@ -16,7 +16,7 @@ module.exports = {
     ..._.zipObject(poseExt.map(v=>v.text),poseExt.map(v=>v.file))
   },
   allPoses() {
-    return [ ...this.nomalPoses(), ...this.extPoses() ]
+    return [ ...[...pose,...poseExt].map(v=>v.en), ...[...pose,...poseExt].map(v=>v.text) ]
   },
   nomalPoses(){
     return  _.keys(this.poseHash)
