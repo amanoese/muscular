@@ -5,7 +5,7 @@ const posejs   = require('./pose');
 const shoutjs  = require('./shout');
 
 const _ = require('lodash')
-const appRoot = `${__dirname}/..`
+const appRoot = `./..`
 
 let muscular_shout = () => {
   let words = require(`${appRoot}/data/shout.json`)

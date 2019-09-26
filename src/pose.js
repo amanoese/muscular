@@ -1,10 +1,10 @@
-const appRoot = `${__dirname}/..`
+const appRoot = `./..`
 const _       = require('lodash')
 const fs      = require('fs')
 
 const FileHound = require('filehound');
-const pose      = require(`${appRoot}/data/pose.json`);
-const poseExt   = require(`${appRoot}/data/pose-ext.json`);
+const pose      = require(`../data/pose.json`);
+const poseExt   = require(`../data/pose-ext.json`);
 
 module.exports = {
   poseHash : {
@@ -36,7 +36,7 @@ module.exports = {
   },
   getAA(name){
     let key = this.getPoseName(name)
-    let aa_text = fs.readFileSync(`${appRoot}/data_aa/${this.poseHash[key] || this.poseExtHash[key]}`)
+    let aa_text = fs.readFileSync(`__dirname/../data_aa/${this.poseHash[key] || this.poseExtHash[key]}`)
       .toString()
     return this.nomarizeAA(aa_text)
   },

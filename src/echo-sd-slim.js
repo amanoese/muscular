@@ -1,8 +1,8 @@
-const appRoot = `${__dirname}/..`
+const appRoot = `./..`
 
 const _ = require('lodash')
 const stringWidth = require('string-width');
-const yokoTate = require(`${appRoot}/data/yoko-tate`);
+const yokoTate = require(`../data/yoko-tate`);
 
 const split = require('graphemesplit')
 
